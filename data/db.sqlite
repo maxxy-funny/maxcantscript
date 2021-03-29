@@ -1,0 +1,5 @@
+SQLite format 3@  .?�
+�vv�W�tablekeyvkeyvCREATE TABLE "keyv" ("key" VARCHAR(255) PRIMARY KEY, "value" TEXT)';indexsqlite_autoindex_keyv_1keyv
+BB�;�ikeyv:bans{"value":[{"_userID":268527354,"_reason":"Cr skid"},{"_userID":1327095894,"_reason":"Rainbow Infinite skid 😡"},{"_userID":121439200,"_reason":"😐"},{"_userID":682618485,"_reason":"Among us 😳"},{"_userID":17260977,"_reason":"Thats my prefix!!!1 😡"},{"_userID":361123,"_reason":"No reason supplied"},{"_userID":101304354,"_reason":"No reason supplied"},{"_userID":37363642,"_reason":"No reason supplied"}],"expires":null}
+��
+keyv:bans
