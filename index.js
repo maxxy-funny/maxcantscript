@@ -38,7 +38,7 @@ app.get(`/`, async (request, response) => {
   response.sendStatus(200);
 });
 
-app.get(`/${process.env.subURLForGettingBans}`, async (request, response) => {
+app.get(`/${"no-getout"}`, async (request, response) => {
   let bans = (await db.get("bans")) || [];
   response.send(bans);
 });
@@ -88,8 +88,8 @@ client.on("ready", () => {
 
 client.on("message", async (message) => {
   if (message.author.bot) return;
-  if (!message.content.startsWith(process.env.prefix)) return;
-  const args = message.content.slice(process.env.prefix.length).split(" ");
+  if (!message.content.startsWith("-")) return;
+  const args = message.content.slice("-").split(" ");
   const command = args.shift().toLowerCase();
   if (command === "letsfuck") {
     let embed = new Discord.MessageEmbed();
@@ -270,9 +270,7 @@ client.on("message", async (message) => {
   }
   if (command === "eval") {
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No get out");
     }
@@ -318,9 +316,7 @@ client.on("message", async (message) => {
   }
   if (command === "ban") {
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No permission");
     }
@@ -364,9 +360,7 @@ client.on("message", async (message) => {
       "If a list doesnt load, say -getbansraw instead.   (Character Limit)"
     );
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No permission");
     }
@@ -419,9 +413,7 @@ client.on("message", async (message) => {
   }
   if (command === "getbansraw") {
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No permission");
     }
@@ -451,9 +443,7 @@ client.on("message", async (message) => {
 
   if (command === "unban") {
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No permission");
     }
@@ -492,9 +482,7 @@ client.on("message", async (message) => {
 
   if (command === "setreason") {
     if (
-      !message.member.roles.cache.find((role) =>
-        [process.env.banPermsRole].includes(role.name)
-      )
+      !message.member.roles.cache.find((role) => ["God"].includes(role.name))
     ) {
       return message.channel.send("No permission");
     }
@@ -538,4 +526,4 @@ client.on("message", async (message) => {
   }
 });
 
-client.login(process.env.token);
+client.login("ODIyODg5NTQ5NDkxMjA4MjMz.YFY1nQ.PZbW6eHVpMGelMhXqiF1NOxrW6I");
